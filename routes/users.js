@@ -29,14 +29,14 @@ router.post("/login",(req,res)=>{
     user.findOne({userName:uname}).select('_id userName password email phone')
     .then((result)=>{
       if(result==null){
-        res.send("user not found")
+        res.send({"res":"user not found"})
       }
       else{
           if(result.password==pwd){
             res.send(result);
           }
           else{
-            res.send("Wrong username or password")
+            res.send({"res":"Wrong username or password"})
           }
       }
     })

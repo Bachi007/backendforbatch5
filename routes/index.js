@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var product=require('../model/product');
+
+
 router.get("/hello",(req,res)=>{
   res.end("Hello world")
 })
